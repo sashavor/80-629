@@ -47,6 +47,7 @@ def plot_polynomial_curves(x_train, x_test, y_train, y_test, degree, scale):
         x_draw = np.linspace(-scale, scale, num=200)
         y_draw = np.polyval(coef, x_draw)
         plt.plot(x_draw, y_draw, color=c, label=degree[k],)
+        plt.ylim(min(min(y_train), min(y_test)), max(max(y_train), max(y_test)))
         #plt.plot(x_train, y_hat_train, color=c, label=degree[k],)
     
     leg = plt.gca().legend(loc='center left', bbox_to_anchor=(1, .65), title="Polynomial degree of  \n  the fitted curve \n")
