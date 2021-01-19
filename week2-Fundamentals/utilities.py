@@ -72,16 +72,16 @@ def plot_optimal_curve(optimal_train, optimal_test, H_train, H_test, optimal_deg
     ax1.plot(H_test[:,2], color=cmap(1), label='Cubic',linewidth=linewidth)
     
     ax1.plot(optimal_train, color=cmap(0), linestyle='dashed', linewidth=linewidth)   # Since we are 'also' interested in the optimal curve
-    ax1.plot(optimal_test, color=cmap(0), label='Optimal Capacity', linewidth=linewidth)
+    ax1.plot(optimal_test, color=cmap(0), label='MSE of optimal capacity', linewidth=linewidth)
 
-    ax2.plot(optimal_degree, color=cmap(2), label='Optimial degree', linewidth=linewidth)   # Optimal degree with respect to the sample size
+    ax2.scatter(optimal_degree, color=cmap(0), label='Degree of optimal capacity', linewidth=linewidth)   # Optimal degree with respect to the sample size
 
     plt.xticks([0, 1, 2, 3, 4, 5])
 
     ax1.set_xlabel('Sample size:  $\ \log_{10}(n) - 1$')
     ax1.set_ylabel('MSE')
     ax1.set_ylim(mini-50, maxi+100)
-    ax2.set_ylabel('Degree of the plynomial', fontsize=12, color = 'green')
+    ax2.set_ylabel('Degree of the polynomial', fontsize=12, color = 'blue')
     leg1 = ax1.legend(loc='center left', bbox_to_anchor=(1.1, .8))   # Legend location is somehow important to me
     leg1.get_frame().set_alpha(0)   # Legend without frame > legend with frame imo
     leg2 = ax2.legend(loc='center left', bbox_to_anchor=(1.1, .8))   # Legend location is somehow important to me
