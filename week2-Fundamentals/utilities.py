@@ -112,8 +112,8 @@ def train_poly_and_see(sample_size, scale, period, variance, degree):
             j += 1
 
         optimal_degree.append(degree[np.argmin(H_test[i, :])])
-        optimal_train.append(H_train[i, optimal_degree[-1]])
-        optimal_test.append(H_test[i, optimal_degree[-1]])
+        optimal_train.append(H_train[i, np.argmin(H_test[i, :])])
+        optimal_test.append(H_test[i, np.argmin(H_test[i, :])])
         i +=1
     
     return H_train, H_test, optimal_train, optimal_test, optimal_degree
