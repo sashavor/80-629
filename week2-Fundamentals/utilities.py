@@ -74,7 +74,7 @@ def plot_optimal_curve(optimal_train, optimal_test, H_train, H_test, optimal_deg
     ax1.plot(optimal_train, color=cmap(0), linestyle='dashed', linewidth=linewidth)   # Since we are 'also' interested in the optimal curve
     ax1.plot(optimal_test, color=cmap(0), label='MSE of optimal capacity', linewidth=linewidth)
 
-    ax2.scatter(optimal_degree, color=cmap(0), label='Degree of optimal capacity', linewidth=linewidth)   # Optimal degree with respect to the sample size
+    ax2.plot(optimal_degree, color=cmap(0), linestyle='.', label='Degree of optimal capacity', linewidth=linewidth)   # Optimal degree with respect to the sample size
 
     plt.xticks([0, 1, 2, 3, 4, 5])
 
